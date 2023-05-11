@@ -1,0 +1,100 @@
+a,
+article,
+aside,
+body,
+canvas,
+caption,
+div,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+iframe,
+img,
+label,
+legend,
+li,
+nav,
+ol,
+p,
+pre,
+section,
+span,
+sub,
+sup,
+table,
+ul,
+video {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+  position: relative;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+input,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  outline: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
