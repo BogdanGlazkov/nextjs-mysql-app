@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { CiTrash } from "react-icons/ci";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
