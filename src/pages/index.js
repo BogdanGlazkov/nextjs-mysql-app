@@ -8,6 +8,7 @@ export default function Home() {
   const productIDToDeleteRef = useRef();
   const productIDToUpdateRef = useRef();
   const productNameToUpdateRef = useRef();
+
   const [products, setProducts] = useState([]);
   const [updated, setUpdated] = useState(false);
   const [updatedError, setUpdatedError] = useState(false);
@@ -132,7 +133,6 @@ export default function Home() {
 
   return (
     <>
-      {" "}
       <Head>
         <title>CRUD With Next.Js & MySQL Demo</title>
       </Head>
