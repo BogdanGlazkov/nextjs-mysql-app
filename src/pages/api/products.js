@@ -1,4 +1,5 @@
 import { query } from "@/lib/db";
+import { rewrites } from "../../../next.config";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
@@ -50,5 +51,23 @@ export default async function handler(req, res) {
       product_name: productName,
     };
     res.status(200).json({ response: { message, updatedProduct } });
+  }
+
+  if (req.method === "Delete") {
+    const productId = req.body.product_id;
+    let message;
+
+    const deleteProduct = await query({
+      query: "DELETE FROM products WHERE product_id = ?",
+      values: [productId],
+    });
+
+    const result = deleteProduct.affectedRows;
+    if (result) {
+      message = "success";
+    } else {
+      message = "error";
+    }
+    res.status(200).json({ response: { message, productId } });
   }
 }
