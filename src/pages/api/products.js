@@ -27,4 +27,28 @@ export default async function handler(req, res) {
     };
     res.status(201).json({ response: { message, newProduct } });
   }
+
+  if (req.method === "PUT") {
+    const productId = req.body.product_id;
+    const productName = req.body.product_name;
+    let message;
+
+    const updateProduct = await query({
+      query: "UPDATE products SET product_name = ? WHERE product_id = ?",
+      values: [productName, productId],
+    });
+
+    const result = updateProduct.affectedRows;
+    if (result) {
+      message = "success";
+    } else {
+      message = "error";
+    }
+
+    const updatedProduct = {
+      product_id: productId,
+      product_name: productName,
+    };
+    res.status(200).json({ response: { message, updatedProduct } });
+  }
 }
